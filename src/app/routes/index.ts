@@ -8,7 +8,6 @@ import { DoctorScheduleRoutes } from '../modules/doctorSchedule/doctorSchedules.
 const router = express.Router();
 
 const moduleRoutes = [
-    
     {
         path: '/user',
         route: UserRoute

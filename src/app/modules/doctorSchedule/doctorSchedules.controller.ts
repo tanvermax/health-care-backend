@@ -7,7 +7,11 @@ import { doctorScheduleService } from "./doctorSchedules.service";
 
 
 
+const schedulesForDoctor = catchAsync(async (req: Request & {user?:IJWTPayload}, res: Response) => {
 
+
+    
+})
 
 
 
@@ -38,7 +42,7 @@ const insertIntoDB = catchAsync(async (req: Request & {user?:IJWTPayload}, res: 
 
 export const doctorScheduleController = {
 
-    insertIntoDB,
+    insertIntoDB,schedulesForDoctor
     //  schedulesForDoctor,deleteScheduleFromDB
 
 }

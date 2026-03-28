@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from "express"
 import { jwtHelper } from "../helper/jwtHelper"
 import config from "../../config"
+import ApiError from "../errors/ApiErrors"
+import httpStatus from "http-status"
 
 const auth = (...role: string[]) => {
 
@@ -9,7 +11,7 @@ const auth = (...role: string[]) => {
             const token = req.cookies.accesstoken
 
             if (!token) {
-                throw new Error("You ar not autorized")
+                throw new ApiError(httpStatus.UNAUTHORIZED,"You ar not autorized")
             }
 
             const verifyUser = jwtHelper.verifyToken(token, config.jwt_token_secret as string);
